@@ -1,0 +1,11 @@
+VENDING MACHINE SPECIFICATIONS
+
+1. The machine only accepts US quarters - you physically cannot put anything else in, and you can only put one coin in at a time.
+2. Purchase price of an item is two US quarters.
+3. Machine only holds five of each of the three beverages available to purchase in its
+inventory.
+4. Machine will accept more than the purchase price of coins, but will only dispense a single
+beverage per transaction.
+5. Upon transaction completion, any unused quarters must be dispensed back to the
+customer.
+6. All test interactions will be performed with a single content type of “application/json”.

@@ -12,8 +12,8 @@ mongoose.connect(url,{
 .catch((err) => console.log(err));
 
 const vendingSchema = new Schema({
+    name: String,
     coin: Number,
-    inventory: Array,
     beverageOne: Object,
     beverageTwo: Object,
     beverageThree: Object

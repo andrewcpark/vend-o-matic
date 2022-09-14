@@ -1,30 +1,26 @@
 const express = require('express');
 const router = express.Router();
+const vendingController = require('../controller/vendingController');
 
-router.put('/', (req, res) => {
-    return res.status(204).set({
-        'X-Coins' : 5
-    })
+router.put('/', vendingController.addCoin, (req, res) => {
+    return res.sendStatus(204);
 });
 
-router.delete('/', (req, res) => {
-    return res.send(204)
+router.delete('/', vendingController.deleteCoin, (req, res) => {
+    return res.sendStatus(204);
 });
 
-router.get('/inventory', (req, res) => {
-    return res.send(200)
+router.get('/inventory', vendingController.getInventory, (req, res) => {
+    return res.status(200).json(res.locals);
 });
 
-router.get('/inventory/:id', (req, res) => {
-    return res.send(200)
+router.get('/inventory/:id', vendingController.getBeverageInventory, (req, res) => {
+    return res.status(200).json(res.locals);
 });
 
-router.put('/inventory/:id', (req, res) => {
-    return res.send(200)
+router.put('/inventory/:id', vendingController.buyBeverage, vendingController.deleteCoin, (req, res) => {
+    return res.json(res.locals);
 });
 
-router.put('/inventory/:id', (req, res) => res.send(403));
-
-router.put('/inventory/:id', (req, res) => res.send(403));
 
 module.exports = router;

@@ -14,7 +14,7 @@ vendingController.addCoin = (req, res, next) => {
     });
 }
 
-// DELETE COIN
+// DELETE COINS
 // SET HEADER TO X-COINS: TOTAL RETURNED COINS AND SET COIN COUNT TO 0
 vendingController.deleteCoin = (req, res, next) => {
     VendingMachine.findOne({name: "vendingMachineOne"},
@@ -29,7 +29,7 @@ vendingController.deleteCoin = (req, res, next) => {
     });
 }
 
-//GET INVENTORY
+// GET INVENTORY
 // RETURN ARRAY OF REMAINING ITEM QUANTITIES
 vendingController.getInventory = (req, res, next) => {
     VendingMachine.findOne({name: "vendingMachineOne"},
@@ -80,9 +80,9 @@ vendingController.buyBeverage = (req, res, next) => {
             res.locals = "Out of Stock";
             return res.json(res.locals);
         } else if (beverage.coin < 2){
-            res.status(403)
             res.set('X-Coins', 2 - beverage.coin)
             res.locals = "Insufficient Funds";
+            res.status(403)
             return res.json(res.locals);
         } else {
             const key = `${beverageCode}.quantity`;

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const vendingController = require('../controller/vendingController');
 
+
 router.put('/', vendingController.addCoin, (req, res) => {
     return res.sendStatus(204);
 });

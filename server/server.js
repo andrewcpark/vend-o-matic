@@ -1,6 +1,16 @@
 const express = require ('express');
 const app = express();
 const path = require("path");
+const cors = require('cors');
+
+const corsOptions ={
+  origin:'*', 
+  credentials:true,
+  optionSuccessStatus:200,
+  exposedHeaders: ["X-Coins", "X-Inventory"],
+}
+
+app.use(cors(corsOptions));
 
 const vendingRouter = require('./routes/vendingRouter.js');
 
@@ -8,8 +18,14 @@ const vendingRouter = require('./routes/vendingRouter.js');
 const PORT = 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(require("body-parser").json());
 
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+});
+
+// USE ROUTER ENDPOINTS
 app.use('/', vendingRouter);
 
 // INDIVIDUAL ERROR HANDLER

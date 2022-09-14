@@ -19,13 +19,19 @@ vendingController.addCoin = (req, res, next) => {
 vendingController.deleteCoin = (req, res, next) => {
     VendingMachine.findOne({name: "vendingMachineOne"},
     function (err, returnCoinCount) {
-        if (err) return next('Error in deleteCoin middleware');
-        res.set('X-Coins' , returnCoinCount.coin)
-    });
-    VendingMachine.findOneAndUpdate({name: "vendingMachineOne"}, {'coin' : 0}, {new: true},
-    function (err, coinCount) {
-        if (err) return next('Error in deleteCoin middleware');
-        return next()
+        if (err) {
+            return next('Error in deleteCoin middleware');
+        } else if (returnCoinCount.coin === 0){
+            res.set('X-Coins' , 0)
+            return res.sendStatus(204);
+        } else {
+            res.set('X-Coins' , returnCoinCount.coin);
+            VendingMachine.findOneAndUpdate({name: "vendingMachineOne"}, {'coin' : 0}, {new: true},
+            function (err, coinCount) {
+                if (err) return next('Error in deleteCoin middleware');
+                return next();
+            });
+        };           
     });
 }
 
@@ -91,7 +97,7 @@ vendingController.buyBeverage = (req, res, next) => {
                     if (err) return next('Error in addCoin middleware');
                     res.status(200)
                     res.set('X-Inventory', boughtBeverage[beverageCode].quantity)
-                    res.locals = 5 - (boughtBeverage[beverageCode].quantity);
+                    res.locals = { "quantity" : 5 - (boughtBeverage[beverageCode].quantity)};
                     return next();
             });
         }

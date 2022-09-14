@@ -10,7 +10,9 @@ const Beverages = () => {
                 'Content-Type': 'application/json',
               },
         })
-        .then((response) => console.log("Reponse Status:", response.status, response.data))
+        .then((response) => console.log("Reponse Status:", response.status, 
+        "X-Coins: ", response.headers['x-coins'] - 2, 
+        "X-Inventory: ", response.headers['x-inventory'], response.data))
         .catch(err => {
             console.error(err.response.data, err.response.status)
         });

@@ -1,0 +1,26 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "A vending machine web application",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server/server.js"
+  },
+  "keywords": [
+    "vending machine",
+    "coins",
+    "beverages"
+  ],
+  "author": "Andrew Park",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "eslint": "^7.17.0",
+    "mongoose": "^6.6.0",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "express": "^4.18.1"
+  }
+}

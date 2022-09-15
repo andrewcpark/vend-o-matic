@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 const vendingController = require('../controller/vendingController');
 
+// router.get('/', (req, res) => {
+//   return res.status(200).static(path.join(__dirname, "../client/public", "index.html"));
+// });
+
+// router.get('/', (req, res) => {
+//     return res.status(200).static(path.join(__dirname, "../client/public/index.html"));
+//   });
 
 router.put('/', vendingController.addCoin, (req, res) => {
     return res.sendStatus(204);

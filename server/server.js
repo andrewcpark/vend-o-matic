@@ -21,9 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(require("body-parser").json());
 
-app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-});
+
+app.use(express.static("public"));
+// app.get('/', (req, res) => {
+//   return res.status(200).static(path.join(__dirname, "../client/public", "index.html"));
+// });
 
 // USE ROUTER ENDPOINTS
 app.use('/', vendingRouter);

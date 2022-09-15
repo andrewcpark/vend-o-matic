@@ -26,7 +26,7 @@ I used a NoSQL database(MongoDB) for its easy of use and setup. For future scala
 
 ## Data Flow Diagram
 
-(vend-o-matic DFD.png)
+![image](Images/vend-o-matic DFD.png)
 
 ## Getting Started
 

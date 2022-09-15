@@ -1,5 +1,6 @@
 # vend-o-matic
 A vending machine web application
+[Check demo here](https://vendingmachine-vendomatic.herokuapp.com/)
 
 ## Getting Started
 

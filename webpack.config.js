@@ -16,11 +16,11 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: './dist/index.html',
+      directory: './public/index.html',
     },
     port: 8080,
     proxy: {
-      '/db/**': {
+      '/**': {
         target: 'http://localhost:3000',
         secure: false,
       },

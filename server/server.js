@@ -23,9 +23,6 @@ app.use(require("body-parser").json());
 
 
 app.use(express.static("public"));
-// app.get('/', (req, res) => {
-//   return res.status(200).static(path.join(__dirname, "../client/public", "index.html"));
-// });
 
 // USE ROUTER ENDPOINTS
 app.use('/', vendingRouter);

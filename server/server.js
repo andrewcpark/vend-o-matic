@@ -15,7 +15,7 @@ app.use(cors(corsOptions));
 const vendingRouter = require('./routes/vendingRouter.js');
 
 // SERVER WILL LISTEN ON PORT 3000
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

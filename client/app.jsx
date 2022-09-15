@@ -1,6 +1,6 @@
 import { Coins }  from './components/coins.jsx';
 import { Beverages }  from './components/beverages.jsx';
-import { Inventory }  from './components/Inventory.jsx';
+import { Inventory }  from './components/inventory.jsx';
 
 
 const App = () => {

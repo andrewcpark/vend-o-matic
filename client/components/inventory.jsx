@@ -19,7 +19,7 @@ const Inventory = () => {
     const getBeverageInventory = (id) => {
         axios({
             method: 'get',
-            url: `/${id}`,
+            url: `/inventory/${id}`,
             headers: {
                 'Content-Type': 'application/json',
               },

@@ -6,7 +6,7 @@ A vending machine web simulation.
 
 ## Description
 
-My overall paln was to create a simple simulation of a vending machine that would return requested data from mutiple endpoints. For this application, I used React to create the UI, Node and Express for the server and middleware, and lastly, a NoSQL Databatase(MongoDB) to store the data.
+My overall plan was to create a simple simulation of a vending machine that would return requested data from mutiple endpoints. For this application, I used React to create the UI, Node and Express for the server and middleware, and lastly, a NoSQL Databatase(MongoDB) to store the data.
 <br>
 
 Uses Cases

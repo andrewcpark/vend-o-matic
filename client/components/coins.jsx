@@ -5,7 +5,7 @@ const Coins = () => {
     const addCoin = () => {
         axios({
             method: 'put',
-            url: "http://localhost:3000/",
+            url: "/",
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': 'true'
@@ -23,7 +23,7 @@ const Coins = () => {
     const deleteCoin = () => {
         axios({
             method: 'delete',
-            url: "http://localhost:3000/",
+            url: "/",
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': 'true'

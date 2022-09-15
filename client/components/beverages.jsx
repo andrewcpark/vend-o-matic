@@ -5,7 +5,7 @@ const Beverages = () => {
     const buyBeverage = (id) => {
         axios({
             method: 'put',
-            url: `http://localhost:3000/inventory/${id}`,
+            url: `/inventory/${id}`,
             headers: {
                 'Content-Type': 'application/json',
               },

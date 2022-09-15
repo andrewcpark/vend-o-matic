@@ -5,7 +5,7 @@ const Inventory = () => {
     const getInventory = () => {
         axios({
             method: 'get',
-            url: "http://localhost:3000/inventory",
+            url: "/inventory",
             headers: {
                 'Content-Type': 'application/json',
               },
@@ -19,7 +19,7 @@ const Inventory = () => {
     const getBeverageInventory = (id) => {
         axios({
             method: 'get',
-            url: `http://localhost:3000/inventory/${id}`,
+            url: `/${id}`,
             headers: {
                 'Content-Type': 'application/json',
               },

@@ -30,13 +30,13 @@ I used a NoSQL database(MongoDB) for its ease of use and setup. For future scala
 
 ## Getting Started
 
-### Clone this repository
+### Clone This Repository
 
 ```bash
 git clone https://github.com/andrewcpark/vend-o-matic.git
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install

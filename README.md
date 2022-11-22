@@ -2,7 +2,6 @@
 
 A vending machine web simulation.
 <br>
-[Check demo here.](https://vendingmachine-vendomatic.herokuapp.com/)
 
 ## Description
 
